@@ -1,0 +1,384 @@
+$bgclaro: #FFFFFF;
+$font1: 'Josefin Sans';
+$font2:'Josefin Slab';
+$colornaranja: #FF745C;
+$tamañoletranaranja: 1.8rem;
+$tamañoparrafo: clamp(.5vw, 2.5rem, 1.5rem);
+$tamañoTitulo:clamp(3.5vw, 3rem, 5rem);
+$line-height_parrafo: 3rem;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+
+@mixin bg_filtro {
+    position: absolute;
+    width: 100%;
+    background: #110804;
+    opacity: .6;
+    top: 0;
+}
+
+@mixin img_templates {
+    width: 100%;
+    object-fit: cover;
+}
+
+@mixin parrafo {
+    text-align: center;
+    font-family: roboto, arial;
+    font-size: 2rem;
+    font-weight: 400;
+    padding-top: 40px;
+    line-height: 2rem;
+    font-weight: 400;
+    margin: 0 auto;
+    max-width: clamp(800px, 4vw, 500px);
+}
+
+@mixin orangeletter {
+    font-size: 2rem;
+    color: #FF745C;
+    padding-top: 20px;
+}
+
+@mixin StandardOne {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    font-family: "Josefin Sans";
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    .background_template {
+        position: relative;
+        &.background_template img {
+            height: 120vh;
+            @include img_templates;
+        }
+        .filtro {
+            @include bg_filtro;
+            height: 120vh;
+        }
+    }
+    .nombres {
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        color: $colornaranja;
+        letter-spacing: 1px;
+        text-align: center;
+        padding-top: 40px;
+        & h1 {
+            font-size: 1.8rem;
+            font-family: $font1;
+            text-align: center;
+        }
+        .titulo {
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            width: 100%;
+            padding: 5px;
+            & h2 {
+                color: $bgclaro;
+                font-size: $tamañoTitulo;
+                font-family: $font1;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                font-weight: 600;
+            }
+            & p {
+                color: $bgclaro;
+                font-size: $tamañoparrafo;
+                line-height: $line-height_parrafo;
+                font-family: $font1;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                font-weight: 600;
+                padding-top: 30px;
+                opacity: .7;
+            }
+        }
+    }
+}
+
+main {
+    overflow-x: hidden;
+    height: auto;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    & .main_titulo {
+        height: 60vh;
+        width: 700px;
+        padding: 15px;
+        @include StandardOne;
+        & h1 {
+            font-size: $tamañoTitulo;
+        }
+        & h2 {
+            @include orangeletter;
+            font-size: clamp(1.5vw, 2.5rem, 1.5rem);
+        }
+        & p {
+            @include parrafo;
+            font-size: $tamañoparrafo;
+            line-height: $line-height_parrafo;
+        }
+    }
+    .background_template2 {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        &.background_template2 img {
+            height: 90vh;
+            @include img_templates;
+        }
+        & .filtro2 {
+            @include bg_filtro;
+            position: absolute;
+            bottom: 2px;
+        }
+    }
+    & .wedding_date {
+        width: 100%;
+        background-color: transparent;
+        color: white;
+        position: absolute;
+        bottom: 50%;
+        & p {
+            font-size: $tamañoparrafo;
+            font-family: $font1;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            opacity: .7;
+            padding: 0;
+            line-height: $line-height_parrafo;
+        }
+        & h1 {
+            font-size: $tamañoTitulo;
+            font-family: $font1;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            margin-top: 30px;
+        }
+    }
+    & .wedding_dd_container {
+        background-color: $bgclaro;
+        height: 100vh;
+        &.wedding_dd_container p {
+            font-size: $tamañoparrafo;
+        }
+        @include StandardOne;
+        & h1 {
+            font-size: $tamañoTitulo;
+            letter-spacing: 1px;
+            font-family: $font1;
+        }
+        & .p0 {
+            padding-top: 40px;
+            & p {
+                width: 80%;
+                @include parrafo;
+                font-size: $tamañoparrafo;
+                line-height: $line-height_parrafo;
+            }
+        }
+        & .p1 h3,
+        .p2 h3 {
+            font-size: $tamañoletranaranja;
+            @include orangeletter;
+            padding-bottom: 15px;
+        }
+        & .p1 p,
+        .p2 p {
+            font-size: $tamañoparrafo;
+            line-height: $line-height_parrafo;
+            letter-spacing: .5px;
+            text-align: center;
+            font-family: $font2;
+            font-weight: 400;
+        }
+    }
+    & .accom_container {
+        height: 80vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #FAEBE3;
+        & .accom_tittle {
+            max-width: clamp(800px, 3vw, 300px);
+            height: auto;
+            padding: 15px
+        }
+        & .accom_tittle h1 {
+            font-size: $tamañoTitulo;
+            letter-spacing: 2px;
+            font-family: $font1;
+            margin-bottom: 20px;
+        }
+        & .accom_tittle p {
+            @include parrafo;
+            font-size: $tamañoparrafo;
+            line-height: $line-height_parrafo;
+            font-weight: 400;
+            padding: 0
+        }
+        & h2 {
+            font-family: $font1;
+            font-size: $tamañoparrafo;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-top: 25px;
+            color: $colornaranja;
+            margin-bottom: 20px;
+        }
+        & p {
+            font-family: $font1;
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 1.7rem;
+            padding: 0
+        }
+        & button {
+            margin-top: 25px;
+            width: 130px;
+            height: 30px;
+            align-self: center;
+            border-radius: 20px;
+            background-color: transparent;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+        }
+    }
+    & .background_template3 {
+        position: relative;
+        width: 100%;
+        &.background_template3 img {
+            @include img_templates;
+            height: 180vh;
+        }
+        .filtro3 {
+            @include bg_filtro;
+            opacity: .9;
+            height: 180vh;
+        }
+    }
+    & .galeria {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+    & .galeria_container {
+        display: grid;
+        grid-template-columns: 220px 220px 220px 220px;
+        grid-template-rows: 220px 220px 220px;
+        place-content: center;
+        gap: 30px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+    }
+    & .galeria_container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 2px;
+        filter: sepia(.5);
+    }
+    .donaciones {
+        height: 120vh;
+        @include StandardOne;
+        & h1 {
+            font-size: $tamañoTitulo;
+        }
+        & p {
+            font-size: $tamañoparrafo;
+        }
+        & button {
+            margin-top: 25px;
+            width: 250px;
+            height: 35px;
+            align-self: center;
+            border-radius: 20px;
+            background-color: transparent;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+            & a {
+                width: 100%;
+                text-decoration: none;
+                color: black;
+                font-size: $tamañoletranaranja;
+                color: $colornaranja;
+            }
+            &:hover {
+                background-color: $colornaranja;
+            }
+            & a:hover {
+                color: white
+            }
+        }
+        & h2 {
+            font-size: $tamañoparrafo;
+        }
+    }
+}
+
+footer {
+    height: 100px;
+    background-color: $colornaranja;
+    @include StandardOne();
+    & h1,
+    h2 {
+        color: white;
+        font-size: $tamañoparrafo;
+        font-weight: 500;
+        font-family: $font2;
+    }
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, .4);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar:hover:active {
+    background: #999;
+}

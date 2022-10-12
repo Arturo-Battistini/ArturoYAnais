@@ -275,33 +275,38 @@ main {
             font-size: 1.2rem;
         }
     }
-    & .background_template3 {
-        position: relative;
-        width: 100%;
-        &.background_template3 img {
-            @include img_templates;
-            height: 180vh;
-        }
-        .filtro3 {
-            @include bg_filtro;
-            opacity: .9;
-            height: 180vh;
-        }
-    }
     & .galeria {
-        display: flex;
-        justify-content: center;
+        width: 100%;
+        height: auto;
+        display: grid;
+        background-image: url(../ArturoYAnais/fotos/d.png);
+        background-size: cover;
+        background-repeat: repeat;
+        place-items: center;
+        padding: 20px;
         position: relative;
+    }
+    & .galeria::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .70);
     }
     & .galeria_container {
+        width: 100%;
+        height: 100%;
         display: grid;
-        grid-template-columns: 220px 220px 220px 220px;
-        grid-template-rows: 220px 220px 220px;
+        grid-template-columns: repeat(auto-fit, minmax(100px, clamp(240px, 4vw, 100px)));
+        grid-template-rows: repeat(auto-fit, minmax(100px, clamp(240px, 4vw, 100px)));
         place-content: center;
-        gap: 30px;
-        position: absolute;
+        align-content: center;
+        gap: 20px;
         top: 0;
         bottom: 0;
+        z-index: 3;
     }
     & .galeria_container img {
         width: 100%;

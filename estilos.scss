@@ -159,6 +159,72 @@ main {
             bottom: 2px;
         }
     }
+    & .padrinos_titulo {
+        width: 100%;
+        height: auto;
+        background-color: $bgclaro;
+        font-family: $font1;
+        padding: 30px;
+        & h1 {
+            font-size: $tamañoTitulo;
+            color: #372319;
+            padding-top: 30px;
+        }
+        & #padrinos_nombres_box {
+            padding: 30px;
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            & p {
+                font-size: $tamañoparrafo;
+                font-size: 3rem;
+                font-family: $font2;
+                color: $colornaranja;
+                font-weight: bold;
+            }
+        }
+    }
+    & .padrinos {
+        width: 100%;
+        height: auto;
+        display: grid;
+        background-image: url(../ArturoYAnais/fotos/asd.jpg);
+        background-size: cover;
+        background-repeat: repeat;
+        place-items: center;
+        padding: 20px;
+        position: relative;
+    }
+    & .padrinos::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .70);
+    }
+    & .padrinos_box {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, clamp(300px, 4vw, 100px)));
+        grid-template-rows: repeat(auto-fit, minmax(100px, clamp(500px, 4vw, 100px)));
+        place-content: center;
+        align-content: center;
+        gap: 20px;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+    }
+    & .padrinos_box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 2px;
+        filter: grayscale(1);
+    }
     & .wedding_date {
         width: 100%;
         background-color: transparent;
@@ -279,7 +345,7 @@ main {
         width: 100%;
         height: auto;
         display: grid;
-        background-image: url(../ArturoYAnais/fotos/d.png);
+        background-image: url(../ArturoYAnais/fotos/asd.jpg);
         background-size: cover;
         background-repeat: repeat;
         place-items: center;
@@ -313,7 +379,7 @@ main {
         height: 100%;
         object-fit: cover;
         border-radius: 2px;
-        filter: sepia(.5);
+        filter: sepia(.6);
     }
     .donaciones {
         height: 120vh;
@@ -364,6 +430,13 @@ footer {
         font-size: $tamañoparrafo;
         font-weight: 500;
         font-family: $font2;
+    }
+}
+
+@media (max-width: 480px) {
+    #padrinos_nombres_box {
+        display: flex!important;
+        flex-direction: column;
     }
 }
 

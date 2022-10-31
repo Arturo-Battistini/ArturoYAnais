@@ -93,7 +93,7 @@ main {
           justify-content: center;
 }
 main .main_titulo {
-  height: 60vh;
+  height: 80vh;
   width: 700px;
   padding: 15px;
   width: 100%;
@@ -110,9 +110,8 @@ main .main_titulo {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 main .main_titulo h1 {
   font-size: clamp(3.5vw, 3rem, 5rem);
@@ -133,8 +132,21 @@ main .main_titulo p {
   font-weight: 400;
   margin: 0 auto;
   max-width: clamp(800px, 4vw, 500px);
-  font-size: clamp(0.5vw, 2.5rem, 1.5rem);
+  font-size: 1.8rem;
   line-height: 3rem;
+  text-align: center;
+  padding: 15px;
+  background-color: whitesmoke;
+  font-family: "Josefin Slab";
+  color: #a55671;
+}
+main .main_titulo a {
+  background: #e91e63;
+  padding: 7px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
 }
 main .background_template2 {
   position: relative;
@@ -174,16 +186,18 @@ main .padrinos_titulo #padrinos_nombres_box {
   display: -ms-grid;
   display: grid;
   width: 100%;
+  background-color: whitesmoke;
   -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
-main .padrinos_titulo #padrinos_nombres_box p {
+main .padrinos_titulo #padrinos_nombres_box li {
   font-size: clamp(0.5vw, 2.5rem, 1.5rem);
-  font-size: 3rem;
+  font-size: 1.7rem;
   font-family: "Josefin Slab";
-  color: #FF745C;
+  color: #a55671;
   font-weight: bold;
+  list-style: square;
 }
 main .padrinos {
   width: 100%;
@@ -211,8 +225,8 @@ main .padrinos_box {
   height: 100%;
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, clamp(300px, 4vw, 100px)));
-  grid-template-rows: repeat(auto-fit, minmax(100px, clamp(500px, 4vw, 100px)));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(240px, 0.2fr));
   place-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
@@ -224,8 +238,8 @@ main .padrinos_box {
 main .padrinos_box img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: fill;
+     object-fit: fill;
   border-radius: 2px;
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
@@ -257,7 +271,9 @@ main .wedding_date h1 {
 }
 main .wedding_dd_container {
   background-color: #FFFFFF;
-  height: 100vh;
+  height: auto;
+  gap: 20px;
+  padding: 20px;
   width: 100%;
   text-align: center;
   -webkit-box-align: center;
@@ -272,9 +288,9 @@ main .wedding_dd_container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  justify-content: space-around;
 }
 main .wedding_dd_container.wedding_dd_container p {
   font-size: clamp(0.5vw, 2.5rem, 1.5rem);
@@ -298,8 +314,9 @@ main .wedding_dd_container .p0 p {
   font-weight: 400;
   margin: 0 auto;
   max-width: clamp(800px, 4vw, 500px);
-  font-size: clamp(0.5vw, 2.5rem, 1.5rem);
-  line-height: 3rem;
+  font-size: clamp(3.5vw, 3rem, 5rem);
+  line-height: 5rem;
+  font-family: "Josefin Slab";
 }
 main .wedding_dd_container .p1 h3,
 main .wedding_dd_container .p2 h3 {
@@ -318,78 +335,33 @@ main .wedding_dd_container .p2 p {
   font-family: "Josefin Slab";
   font-weight: 400;
 }
-main .accom_container {
-  height: 80vh;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #FAEBE3;
-}
-main .accom_container .accom_tittle {
-  max-width: clamp(800px, 3vw, 300px);
-  height: auto;
-  padding: 15px;
-}
-main .accom_container .accom_tittle h1 {
-  font-size: clamp(3.5vw, 3rem, 5rem);
-  letter-spacing: 2px;
-  font-family: "Josefin Sans";
-  margin-bottom: 20px;
-}
-main .accom_container .accom_tittle p {
-  text-align: center;
-  font-family: roboto, arial;
-  font-size: 2rem;
-  font-weight: 400;
-  padding-top: 40px;
-  line-height: 2rem;
-  font-weight: 400;
-  margin: 0 auto;
-  max-width: clamp(800px, 4vw, 500px);
+main .wedding_dd_container .d1,
+main .wedding_dd_container .d2 {
+  text-decoration: none;
   font-size: clamp(0.5vw, 2.5rem, 1.5rem);
   line-height: 3rem;
-  font-weight: 400;
-  padding: 0;
-}
-main .accom_container h2 {
+  letter-spacing: 0.5px;
+  text-align: center;
   font-family: "Josefin Sans";
-  font-size: clamp(0.5vw, 2.5rem, 1.5rem);
-  letter-spacing: 2px;
+  border-radius: 10px;
   font-weight: 600;
-  margin-top: 25px;
-  color: #FF745C;
-  margin-bottom: 20px;
+  padding: 5px;
 }
-main .accom_container p {
-  font-family: "Josefin Sans";
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 1.7rem;
-  padding: 0;
+main .wedding_dd_container .d1 {
+  border: 1px solid none;
+  background-color: rgba(30, 233, 220, 0.3490196078);
+  color: #006fc7;
 }
-main .accom_container button {
-  margin-top: 25px;
-  width: 130px;
-  height: 30px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  border-radius: 20px;
-  background-color: transparent;
-  font-weight: bold;
-  letter-spacing: 1px;
-  font-size: 1.2rem;
+main .wedding_dd_container .d2 {
+  border: 1px solid none;
+  background-color: rgba(233, 30, 99, 0.5098039216);
+  color: #f4f4f4;
+}
+main .wedding_dd_container img {
+  vertical-align: middle;
+}
+main .wedding_dd_container .church {
+  vertical-align: initial;
 }
 main .galeria {
   width: 100%;
@@ -417,8 +389,9 @@ main .galeria_container {
   height: 100%;
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, clamp(240px, 4vw, 100px)));
-  grid-template-rows: repeat(auto-fit, minmax(100px, clamp(240px, 4vw, 100px)));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(240px, 0.2fr));
+  grid-auto-flow: dense;
   place-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
@@ -452,9 +425,8 @@ main .donaciones {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 main .donaciones h1 {
   font-size: clamp(3.5vw, 3rem, 5rem);
@@ -509,9 +481,8 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 footer h1,
 footer h2 {
@@ -521,7 +492,7 @@ footer h2 {
   font-family: "Josefin Slab";
 }
 
-@media (max-width: 480px) {
+@media (max-width: 620px) {
   #padrinos_nombres_box {
     display: -webkit-box !important;
     display: -ms-flexbox !important;

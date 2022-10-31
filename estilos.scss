@@ -52,7 +52,7 @@ $line-height_parrafo: 3rem;
     font-weight: bold;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 html {
@@ -128,7 +128,7 @@ main {
     flex-direction: column;
     justify-content: center;
     & .main_titulo {
-        height: 60vh;
+        height: 80vh;
         width: 700px;
         padding: 15px;
         @include StandardOne;
@@ -141,8 +141,21 @@ main {
         }
         & p {
             @include parrafo;
-            font-size: $tamañoparrafo;
+            font-size: 1.8rem;
             line-height: $line-height_parrafo;
+            text-align: center;
+            padding: 15px;
+            background-color: whitesmoke;
+            font-family: $font2;
+            color: #a55671;
+        }
+        & a {
+            background: #e91e63;
+            padding: 7px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
         }
     }
     .background_template2 {
@@ -175,14 +188,16 @@ main {
             padding: 30px;
             display: grid;
             width: 100%;
+            background-color: whitesmoke;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
-            & p {
+            & li {
                 font-size: $tamañoparrafo;
-                font-size: 3rem;
+                font-size: 1.7rem;
                 font-family: $font2;
-                color: $colornaranja;
+                color: #a55671;
                 font-weight: bold;
+                list-style: square;
             }
         }
     }
@@ -210,8 +225,8 @@ main {
         width: 100%;
         height: 100%;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, clamp(300px, 4vw, 100px)));
-        grid-template-rows: repeat(auto-fit, minmax(100px, clamp(500px, 4vw, 100px)));
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(240px, .2fr));
         place-content: center;
         align-content: center;
         gap: 20px;
@@ -222,7 +237,7 @@ main {
     & .padrinos_box img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: fill;
         border-radius: 2px;
         filter: grayscale(1);
     }
@@ -253,11 +268,14 @@ main {
     }
     & .wedding_dd_container {
         background-color: $bgclaro;
-        height: 100vh;
+        height: auto;
+        gap: 20px;
+        padding: 20px;
         &.wedding_dd_container p {
             font-size: $tamañoparrafo;
         }
         @include StandardOne;
+        justify-content: space-around;
         & h1 {
             font-size: $tamañoTitulo;
             letter-spacing: 1px;
@@ -268,8 +286,9 @@ main {
             & p {
                 width: 80%;
                 @include parrafo;
-                font-size: $tamañoparrafo;
-                line-height: $line-height_parrafo;
+                font-size: $tamañoTitulo;
+                line-height: 5rem;
+                font-family: $font2;
             }
         }
         & .p1 h3,
@@ -287,59 +306,33 @@ main {
             font-family: $font2;
             font-weight: 400;
         }
-    }
-    & .accom_container {
-        height: 80vh;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        background-color: #FAEBE3;
-        & .accom_tittle {
-            max-width: clamp(800px, 3vw, 300px);
-            height: auto;
-            padding: 15px
-        }
-        & .accom_tittle h1 {
-            font-size: $tamañoTitulo;
-            letter-spacing: 2px;
-            font-family: $font1;
-            margin-bottom: 20px;
-        }
-        & .accom_tittle p {
-            @include parrafo;
+        & .d1,
+        .d2 {
+            text-decoration: none;
             font-size: $tamañoparrafo;
             line-height: $line-height_parrafo;
-            font-weight: 400;
-            padding: 0
-        }
-        & h2 {
+            letter-spacing: .5px;
+            text-align: center;
             font-family: $font1;
-            font-size: $tamañoparrafo;
-            letter-spacing: 2px;
+            border-radius: 10px;
             font-weight: 600;
-            margin-top: 25px;
-            color: $colornaranja;
-            margin-bottom: 20px;
+            padding: 5px;
         }
-        & p {
-            font-family: $font1;
-            font-size: 1.4rem;
-            font-weight: 400;
-            line-height: 1.7rem;
-            padding: 0
+        & .d1 {
+            border: 1px solid none;
+            background-color: #1ee9dc59;
+            color: #006fc7;
         }
-        & button {
-            margin-top: 25px;
-            width: 130px;
-            height: 30px;
-            align-self: center;
-            border-radius: 20px;
-            background-color: transparent;
-            font-weight: bold;
-            letter-spacing: 1px;
-            font-size: 1.2rem;
+        & .d2 {
+            border: 1px solid none;
+            background-color: #e91e6382;
+            color: #f4f4f4;
+        }
+        & img {
+            vertical-align: middle;
+        }
+        & .church {
+            vertical-align: initial;
         }
     }
     & .galeria {
@@ -366,8 +359,9 @@ main {
         width: 100%;
         height: 100%;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, clamp(240px, 4vw, 100px)));
-        grid-template-rows: repeat(auto-fit, minmax(100px, clamp(240px, 4vw, 100px)));
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(240px, .2fr));
+        grid-auto-flow: dense;
         place-content: center;
         align-content: center;
         gap: 20px;
@@ -434,7 +428,7 @@ footer {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 620px) {
     #padrinos_nombres_box {
         display: flex!important;
         flex-direction: column;

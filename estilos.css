@@ -120,7 +120,7 @@ main .main_titulo h2 {
   font-size: 2rem;
   color: #FF745C;
   padding-top: 20px;
-  font-size: clamp(1.5vw, 2.5rem, 1.5rem);
+  font-size: clamp(1.5vw, 2.5rem, 2.5rem);
 }
 main .main_titulo p {
   text-align: center;
@@ -147,7 +147,7 @@ main .main_titulo a {
   border-radius: 10px;
   text-decoration: none;
   color: white;
-  font-size: 1.2rem;
+  font-size: clamp(1.5vw, 2.5rem, 2.5rem);
 }
 main .background_template2 {
   position: relative;
@@ -451,9 +451,6 @@ main .donaciones h1 {
 main .donaciones p {
   font-size: clamp(0.5vw, 2.5rem, 1.8rem);
 }
-main .donaciones #cow {
-  vertical-align: bottom;
-}
 main .donaciones button {
   margin-top: 25px;
   width: 200px;
@@ -547,4 +544,8 @@ footer h2 {
 
 ::-webkit-scrollbar:hover:active {
   background: #999;
+}
+
+#cow {
+  vertical-align: bottom;
 }

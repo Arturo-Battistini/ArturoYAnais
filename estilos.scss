@@ -131,6 +131,7 @@ main {
         height: auto;
         width: 700px;
         padding: 30px;
+        overflow-y: hidden;
         @include StandardOne;
         & h1 {
             font-size: $tamañoTitulo;

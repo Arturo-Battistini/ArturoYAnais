@@ -96,6 +96,7 @@ main .main_titulo {
   height: auto;
   width: 700px;
   padding: 30px;
+  overflow-y: hidden;
   width: 100%;
   text-align: center;
   -webkit-box-align: center;

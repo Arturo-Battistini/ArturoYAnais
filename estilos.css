@@ -64,7 +64,7 @@ header .nombres .titulo h2 {
 }
 header .nombres .titulo p {
   color: #FFFFFF;
-  font-size: clamp(0.5vw, 2.5rem, 1.5rem);
+  font-size: clamp(0.5vw, 2.5rem, 1.8rem);
   line-height: 3rem;
   font-family: "Josefin Sans";
   text-transform: uppercase;
@@ -132,13 +132,14 @@ main .main_titulo p {
   font-weight: 400;
   margin: 0 auto;
   max-width: clamp(800px, 4vw, 500px);
-  font-size: 1.8rem;
+  font-size: 2rem;
   line-height: 3rem;
   text-align: center;
   padding: 15px;
   background-color: whitesmoke;
   font-family: "Josefin Slab";
   color: #a55671;
+  font-weight: bold;
 }
 main .main_titulo a {
   background: #e91e63;
@@ -186,18 +187,32 @@ main .padrinos_titulo #padrinos_nombres_box {
   display: -ms-grid;
   display: grid;
   width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: whitesmoke;
   -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 main .padrinos_titulo #padrinos_nombres_box li {
-  font-size: clamp(0.5vw, 2.5rem, 1.5rem);
+  font-size: clamp(0.5vw, 2.5rem, 1.8rem);
   font-size: 1.7rem;
   font-family: "Josefin Slab";
   color: #a55671;
   font-weight: bold;
   list-style: square;
+}
+main .padrinos_titulo #padrinos_nombres_box .li {
+  list-style: none;
+}
+main .padrinos_titulo #padrinos_nombres_box .li h1 {
+  font-size: clamp(0.5vw, 2.5rem, 1.8rem);
+  padding: 0;
+}
+main .padrinos_titulo #padrinos_nombres_box .lip {
+  font-size: clamp(0.5vw, 2.5rem, 1.8rem);
+  color: #a55671;
 }
 main .padrinos {
   width: 100%;
@@ -252,7 +267,7 @@ main .wedding_date {
   bottom: 50%;
 }
 main .wedding_date p {
-  font-size: clamp(0.5vw, 2.5rem, 1.5rem);
+  font-size: clamp(0.5vw, 2.5rem, 1.8rem);
   font-family: "Josefin Sans";
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -293,7 +308,7 @@ main .wedding_dd_container {
   justify-content: space-around;
 }
 main .wedding_dd_container.wedding_dd_container p {
-  font-size: clamp(0.5vw, 2.5rem, 1.5rem);
+  font-size: clamp(0.5vw, 2.5rem, 1.8rem);
 }
 main .wedding_dd_container h1 {
   font-size: clamp(3.5vw, 3rem, 5rem);
@@ -328,7 +343,7 @@ main .wedding_dd_container .p2 h3 {
 }
 main .wedding_dd_container .p1 p,
 main .wedding_dd_container .p2 p {
-  font-size: clamp(0.5vw, 2.5rem, 1.5rem);
+  font-size: clamp(0.5vw, 2.5rem, 1.8rem);
   line-height: 3rem;
   letter-spacing: 0.5px;
   text-align: center;
@@ -338,7 +353,7 @@ main .wedding_dd_container .p2 p {
 main .wedding_dd_container .d1,
 main .wedding_dd_container .d2 {
   text-decoration: none;
-  font-size: clamp(0.5vw, 2.5rem, 1.5rem);
+  font-size: clamp(0.5vw, 2.5rem, 1.8rem);
   line-height: 3rem;
   letter-spacing: 0.5px;
   text-align: center;
@@ -400,6 +415,10 @@ main .galeria_container {
   bottom: 0;
   z-index: 3;
 }
+main .galeria_container .sd {
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
 main .galeria_container img {
   width: 100%;
   height: 100%;
@@ -410,7 +429,7 @@ main .galeria_container img {
           filter: sepia(0.6);
 }
 main .donaciones {
-  height: 120vh;
+  height: 60vh;
   width: 100%;
   text-align: center;
   -webkit-box-align: center;
@@ -432,27 +451,30 @@ main .donaciones h1 {
   font-size: clamp(3.5vw, 3rem, 5rem);
 }
 main .donaciones p {
-  font-size: clamp(0.5vw, 2.5rem, 1.5rem);
+  font-size: clamp(0.5vw, 2.5rem, 1.8rem);
+}
+main .donaciones #cow {
+  vertical-align: bottom;
 }
 main .donaciones button {
   margin-top: 25px;
-  width: 250px;
+  width: 200px;
   height: 35px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   border-radius: 20px;
-  background-color: transparent;
+  background-color: #007c05;
   font-weight: bold;
   letter-spacing: 1px;
   font-size: 1.2rem;
+  border: none;
 }
 main .donaciones button a {
   width: 100%;
   text-decoration: none;
   color: black;
   font-size: 1.8rem;
-  color: #FF745C;
 }
 main .donaciones button:hover {
   background-color: #FF745C;
@@ -461,11 +483,11 @@ main .donaciones button a:hover {
   color: white;
 }
 main .donaciones h2 {
-  font-size: clamp(0.5vw, 2.5rem, 1.5rem);
+  font-size: clamp(0.5vw, 2.5rem, 1.8rem);
 }
 
 footer {
-  height: 100px;
+  height: 75px;
   background-color: #FF745C;
   width: 100%;
   text-align: center;
@@ -487,7 +509,7 @@ footer {
 footer h1,
 footer h2 {
   color: white;
-  font-size: clamp(0.5vw, 2.5rem, 1.5rem);
+  font-size: clamp(0.5vw, 2.5rem, 1.8rem);
   font-weight: 500;
   font-family: "Josefin Slab";
 }
@@ -501,6 +523,9 @@ footer h2 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: initial !important;
+        -ms-flex-align: initial !important;
+            align-items: initial !important;
   }
 }
 ::-webkit-scrollbar-thumb {

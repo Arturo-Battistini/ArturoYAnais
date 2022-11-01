@@ -3,7 +3,7 @@ $font1: 'Josefin Sans';
 $font2:'Josefin Slab';
 $colornaranja: #FF745C;
 $tamañoletranaranja: 1.8rem;
-$tamañoparrafo: clamp(.5vw, 2.5rem, 1.5rem);
+$tamañoparrafo: clamp(.5vw, 2.5rem, 1.8rem);
 $tamañoTitulo:clamp(3.5vw, 3rem, 5rem);
 $line-height_parrafo: 3rem;
 * {
@@ -141,13 +141,14 @@ main {
         }
         & p {
             @include parrafo;
-            font-size: 1.8rem;
+            font-size: 2rem;
             line-height: $line-height_parrafo;
             text-align: center;
             padding: 15px;
             background-color: whitesmoke;
             font-family: $font2;
             color: #a55671;
+            font-weight: bold;
         }
         & a {
             background: #e91e63;
@@ -188,6 +189,7 @@ main {
             padding: 30px;
             display: grid;
             width: 100%;
+            align-items: center;
             background-color: whitesmoke;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
@@ -198,6 +200,17 @@ main {
                 color: #a55671;
                 font-weight: bold;
                 list-style: square;
+            }
+            .li {
+                list-style: none;
+                & h1 {
+                    font-size: $tamañoparrafo;
+                    padding: 0;
+                }
+            }
+            .lip {
+                font-size: $tamañoparrafo;
+                color: #a55671;
             }
         }
     }
@@ -368,6 +381,9 @@ main {
         top: 0;
         bottom: 0;
         z-index: 3;
+        & .sd {
+            object-fit: scale-down;
+        }
     }
     & .galeria_container img {
         width: 100%;
@@ -377,7 +393,7 @@ main {
         filter: sepia(.6);
     }
     .donaciones {
-        height: 120vh;
+        height: 60vh;
         @include StandardOne;
         & h1 {
             font-size: $tamañoTitulo;
@@ -385,22 +401,25 @@ main {
         & p {
             font-size: $tamañoparrafo;
         }
+        & #cow {
+            vertical-align: bottom
+        }
         & button {
             margin-top: 25px;
-            width: 250px;
+            width: 200px;
             height: 35px;
             align-self: center;
             border-radius: 20px;
-            background-color: transparent;
+            background-color: #007c05;
             font-weight: bold;
             letter-spacing: 1px;
             font-size: 1.2rem;
+            border: none;
             & a {
                 width: 100%;
                 text-decoration: none;
                 color: black;
                 font-size: $tamañoletranaranja;
-                color: $colornaranja;
             }
             &:hover {
                 background-color: $colornaranja;
@@ -416,7 +435,7 @@ main {
 }
 
 footer {
-    height: 100px;
+    height: 75px;
     background-color: $colornaranja;
     @include StandardOne();
     & h1,
@@ -432,6 +451,7 @@ footer {
     #padrinos_nombres_box {
         display: flex!important;
         flex-direction: column;
+        align-items: initial!important;
     }
 }
 

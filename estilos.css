@@ -426,7 +426,7 @@ main .galeria_container img {
           filter: sepia(0.6);
 }
 main .donaciones {
-  height: 60vh;
+  height: auto;
   padding: 30px;
   width: 100%;
   text-align: center;

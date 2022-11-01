@@ -130,7 +130,7 @@ main {
     & .main_titulo {
         height: 80vh;
         width: 700px;
-        padding: 15px;
+        padding: 30px;
         @include StandardOne;
         & h1 {
             font-size: $tamañoTitulo;
@@ -222,7 +222,7 @@ main {
         background-size: cover;
         background-repeat: repeat;
         place-items: center;
-        padding: 20px;
+        padding: 15px;
         position: relative;
     }
     & .padrinos::after {
@@ -283,7 +283,7 @@ main {
         background-color: $bgclaro;
         height: auto;
         gap: 20px;
-        padding: 20px;
+        padding: 35px;
         &.wedding_dd_container p {
             font-size: $tamañoparrafo;
         }
@@ -295,7 +295,6 @@ main {
             font-family: $font1;
         }
         & .p0 {
-            padding-top: 40px;
             & p {
                 width: 80%;
                 @include parrafo;
@@ -356,7 +355,7 @@ main {
         background-size: cover;
         background-repeat: repeat;
         place-items: center;
-        padding: 20px;
+        padding: 15px;
         position: relative;
     }
     & .galeria::after {
@@ -394,6 +393,7 @@ main {
     }
     .donaciones {
         height: 60vh;
+        padding: 30px;
         @include StandardOne;
         & h1 {
             font-size: $tamañoTitulo;
@@ -435,6 +435,7 @@ main {
 }
 
 footer {
+    padding: 15px;
     height: 75px;
     background-color: $colornaranja;
     @include StandardOne();

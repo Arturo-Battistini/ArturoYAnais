@@ -95,7 +95,7 @@ main {
 main .main_titulo {
   height: 80vh;
   width: 700px;
-  padding: 15px;
+  padding: 30px;
   width: 100%;
   text-align: center;
   -webkit-box-align: center;
@@ -223,7 +223,7 @@ main .padrinos {
   background-size: cover;
   background-repeat: repeat;
   place-items: center;
-  padding: 20px;
+  padding: 15px;
   position: relative;
 }
 main .padrinos::after {
@@ -288,7 +288,7 @@ main .wedding_dd_container {
   background-color: #FFFFFF;
   height: auto;
   gap: 20px;
-  padding: 20px;
+  padding: 35px;
   width: 100%;
   text-align: center;
   -webkit-box-align: center;
@@ -314,9 +314,6 @@ main .wedding_dd_container h1 {
   font-size: clamp(3.5vw, 3rem, 5rem);
   letter-spacing: 1px;
   font-family: "Josefin Sans";
-}
-main .wedding_dd_container .p0 {
-  padding-top: 40px;
 }
 main .wedding_dd_container .p0 p {
   width: 80%;
@@ -387,7 +384,7 @@ main .galeria {
   background-size: cover;
   background-repeat: repeat;
   place-items: center;
-  padding: 20px;
+  padding: 15px;
   position: relative;
 }
 main .galeria::after {
@@ -430,6 +427,7 @@ main .galeria_container img {
 }
 main .donaciones {
   height: 60vh;
+  padding: 30px;
   width: 100%;
   text-align: center;
   -webkit-box-align: center;
@@ -487,6 +485,7 @@ main .donaciones h2 {
 }
 
 footer {
+  padding: 15px;
   height: 75px;
   background-color: #FF745C;
   width: 100%;

@@ -3,7 +3,7 @@ $font1: 'Josefin Sans';
 $font2:'Josefin Slab';
 $colornaranja: #FF745C;
 $tamañoletranaranja: 1.8rem;
-$tamañoparrafo: clamp(.5vw, 2.5rem, 1.5rem);
+$tamañoparrafo: clamp(.5vw, 2.5rem, 1.8rem);
 $tamañoTitulo:clamp(3.5vw, 3rem, 5rem);
 $line-height_parrafo: 3rem;
 * {
@@ -52,7 +52,7 @@ $line-height_parrafo: 3rem;
     font-weight: bold;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 html {
@@ -128,21 +128,38 @@ main {
     flex-direction: column;
     justify-content: center;
     & .main_titulo {
-        height: 60vh;
+        height: auto;
         width: 700px;
-        padding: 15px;
+        padding: 30px;
+        overflow-y: hidden;
         @include StandardOne;
         & h1 {
             font-size: $tamañoTitulo;
+            padding: 10px
         }
         & h2 {
             @include orangeletter;
-            font-size: clamp(1.5vw, 2.5rem, 1.5rem);
+            font-size: clamp(1.5vw, 2.5rem, 2.5rem);
+            padding: 15px 0 15px 0;
         }
         & p {
             @include parrafo;
-            font-size: $tamañoparrafo;
+            font-size: 2rem;
             line-height: $line-height_parrafo;
+            text-align: center;
+            padding: 15px;
+            background-color: whitesmoke;
+            font-family: $font2;
+            color: #a55671;
+            font-weight: bold;
+        }
+        & a {
+            background: #e91e63;
+            padding: 7px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            font-size: clamp(1.5vw, 2.5rem, 2.5rem);
         }
     }
     .background_template2 {
@@ -158,6 +175,89 @@ main {
             position: absolute;
             bottom: 2px;
         }
+    }
+    & .padrinos_titulo {
+        width: 100%;
+        height: auto;
+        background-color: $bgclaro;
+        font-family: $font1;
+        padding: 30px;
+        & h1 {
+            font-size: $tamañoTitulo;
+            color: #372319;
+            line-height: 4rem;
+        }
+        & #padrinos_nombres_box {
+            padding: 30px;
+            display: grid;
+            width: 100%;
+            align-items: center;
+            background-color: whitesmoke;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            & li {
+                font-size: $tamañoparrafo;
+                font-size: 1.7rem;
+                font-family: $font2;
+                color: #a55671;
+                font-weight: bold;
+                list-style: square;
+            }
+            .li {
+                list-style: none;
+                & h1 {
+                    font-size: $tamañoparrafo;
+                    padding: 0;
+                }
+            }
+            .lip {
+                font-size: $tamañoparrafo;
+                color: #a55671;
+            }
+        }
+    }
+    & .padrinos {
+        width: 100%;
+        height: auto;
+        display: grid;
+        background-image: url(../ArturoYAnais/fotos/asd.jpg);
+        background-size: cover;
+        background-repeat: repeat;
+        place-items: center;
+        padding: 15px;
+        position: relative;
+    }
+    & .padrinos::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .70);
+    }
+    & .padrinos_box {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(240px, .2fr));
+        place-content: center;
+        align-content: center;
+        gap: 20px;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+        & :nth-child(4) {
+            object-fit: contain;
+        }
+    }
+    & .padrinos_box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 2px;
+        filter: grayscale(1);
     }
     & .wedding_date {
         width: 100%;
@@ -186,23 +286,26 @@ main {
     }
     & .wedding_dd_container {
         background-color: $bgclaro;
-        height: 100vh;
+        height: auto;
+        gap: 20px;
+        padding: 35px;
         &.wedding_dd_container p {
             font-size: $tamañoparrafo;
         }
         @include StandardOne;
+        justify-content: space-around;
         & h1 {
             font-size: $tamañoTitulo;
             letter-spacing: 1px;
             font-family: $font1;
         }
         & .p0 {
-            padding-top: 40px;
             & p {
                 width: 80%;
                 @include parrafo;
-                font-size: $tamañoparrafo;
-                line-height: $line-height_parrafo;
+                font-size: $tamañoTitulo;
+                line-height: 5rem;
+                font-family: $font2;
             }
         }
         & .p1 h3,
@@ -220,98 +323,82 @@ main {
             font-family: $font2;
             font-weight: 400;
         }
-    }
-    & .accom_container {
-        height: 80vh;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        background-color: #FAEBE3;
-        & .accom_tittle {
-            max-width: clamp(800px, 3vw, 300px);
-            height: auto;
-            padding: 15px
-        }
-        & .accom_tittle h1 {
-            font-size: $tamañoTitulo;
-            letter-spacing: 2px;
-            font-family: $font1;
-            margin-bottom: 20px;
-        }
-        & .accom_tittle p {
-            @include parrafo;
+        & .d1,
+        .d2 {
+            text-decoration: none;
             font-size: $tamañoparrafo;
             line-height: $line-height_parrafo;
-            font-weight: 400;
-            padding: 0
-        }
-        & h2 {
+            letter-spacing: .5px;
+            text-align: center;
             font-family: $font1;
-            font-size: $tamañoparrafo;
-            letter-spacing: 2px;
+            border-radius: 10px;
             font-weight: 600;
-            margin-top: 25px;
-            color: $colornaranja;
-            margin-bottom: 20px;
+            padding: 5px;
         }
-        & p {
-            font-family: $font1;
-            font-size: 1.4rem;
-            font-weight: 400;
-            line-height: 1.7rem;
-            padding: 0
+        & .d1 {
+            border: 1px solid none;
+            background-color: #1ee9dc59;
+            color: #006fc7;
         }
-        & button {
-            margin-top: 25px;
-            width: 130px;
-            height: 30px;
-            align-self: center;
-            border-radius: 20px;
-            background-color: transparent;
-            font-weight: bold;
-            letter-spacing: 1px;
-            font-size: 1.2rem;
+        & .d2 {
+            border: 1px solid none;
+            background-color: #e91e6382;
+            color: #f4f4f4;
         }
-    }
-    & .background_template3 {
-        position: relative;
-        width: 100%;
-        &.background_template3 img {
-            @include img_templates;
-            height: 180vh;
+        & img {
+            vertical-align: middle;
         }
-        .filtro3 {
-            @include bg_filtro;
-            opacity: .9;
-            height: 180vh;
+        & .church {
+            vertical-align: initial;
         }
     }
     & .galeria {
-        display: flex;
-        justify-content: center;
+        width: 100%;
+        height: auto;
+        display: grid;
+        background-image: url(../ArturoYAnais/fotos/asd.jpg);
+        background-size: cover;
+        background-repeat: repeat;
+        place-items: center;
+        padding: 15px;
         position: relative;
     }
-    & .galeria_container {
-        display: grid;
-        grid-template-columns: 220px 220px 220px 220px;
-        grid-template-rows: 220px 220px 220px;
-        place-content: center;
-        gap: 30px;
+    & .galeria::after {
         position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .70);
+    }
+    & .galeria_container {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(240px, .2fr));
+        grid-auto-flow: dense;
+        place-content: center;
+        align-content: center;
+        gap: 20px;
         top: 0;
         bottom: 0;
+        z-index: 3;
+        & .sd {
+            object-fit: scale-down;
+        }
     }
     & .galeria_container img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 2px;
-        filter: sepia(.5);
+        filter: sepia(.6);
     }
     .donaciones {
-        height: 120vh;
+        height: auto;
+        padding: 30px;
         @include StandardOne;
         & h1 {
             font-size: $tamañoTitulo;
@@ -321,20 +408,20 @@ main {
         }
         & button {
             margin-top: 25px;
-            width: 250px;
+            width: 200px;
             height: 35px;
             align-self: center;
             border-radius: 20px;
-            background-color: transparent;
+            background-color: #007c05;
             font-weight: bold;
             letter-spacing: 1px;
             font-size: 1.2rem;
+            border: none;
             & a {
                 width: 100%;
                 text-decoration: none;
                 color: black;
                 font-size: $tamañoletranaranja;
-                color: $colornaranja;
             }
             &:hover {
                 background-color: $colornaranja;
@@ -350,7 +437,8 @@ main {
 }
 
 footer {
-    height: 100px;
+    padding: 15px;
+    height: 75px;
     background-color: $colornaranja;
     @include StandardOne();
     & h1,
@@ -359,6 +447,14 @@ footer {
         font-size: $tamañoparrafo;
         font-weight: 500;
         font-family: $font2;
+    }
+}
+
+@media (max-width: 620px) {
+    #padrinos_nombres_box {
+        display: flex!important;
+        flex-direction: column;
+        align-items: initial!important;
     }
 }
 
@@ -381,4 +477,8 @@ footer {
 
 ::-webkit-scrollbar:hover:active {
     background: #999;
+}
+
+#cow {
+    vertical-align: bottom
 }
